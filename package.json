@@ -1,0 +1,38 @@
+{
+
+  "name": "wjy-cli",
+  "version": "1.0.0",
+  "description": "wjy cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "wjy": "bin/wjy",
+    "wjy-cli": "bin/wjy"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "keywords": [
+    "cli",
+    "wjy-cli",
+    "脚手架"
+  ],
+  "author": {
+    "name": "wjygrit",
+    "email": "1435408225@qq.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "chalk": "^4.1.2",
+    "commander": "^2.19.0",
+    "download-git-repo": "^1.1.0",
+    "figlet": "^1.5.2",
+    "fs-extra": "^10.1.0",
+    "inquirer": "^6.2.2",
+    "ora": "^3.2.0"
+  }
+}
