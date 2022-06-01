@@ -1,15 +1,13 @@
 {
-
   "name": "wjy-cli",
-  "version": "1.0.0",
+  "version": "4.5.3",
   "description": "wjy cli",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "wjy": "bin/wjy",
-    "wjy-cli": "bin/wjy"
+    "wjy": "bin/wjy"
   },
   "files": [
     "bin",
@@ -27,12 +25,44 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
-    "chalk": "^4.1.2",
-    "commander": "^2.19.0",
-    "download-git-repo": "^1.1.0",
     "figlet": "^1.5.2",
-    "fs-extra": "^10.1.0",
-    "inquirer": "^6.2.2",
-    "ora": "^3.2.0"
+    "fs-extra": "^7.0.1",
+    "ora": "^3.2.0",
+    "@vue/cli-shared-utils": "^3.12.1",
+    "@vue/cli-ui": "^3.12.1",
+    "@vue/cli-ui-addon-webpack": "^3.12.1",
+    "@vue/cli-ui-addon-widgets": "^3.12.1",
+    "chalk": "^2.4.1",
+    "cmd-shim": "^2.0.2",
+    "commander": "^2.20.0",
+    "debug": "^4.1.0",
+    "deepmerge": "^3.2.0",
+    "didyoumean": "^1.2.1",
+    "download-git-repo": "^1.0.2",
+    "ejs": "^2.6.1",
+    "envinfo": "^7.1.0",
+    "execa": "^1.0.0",
+    "globby": "^9.2.0",
+    "import-global": "^0.1.0",
+    "inquirer": "^6.0.0",
+    "isbinaryfile": "^4.0.0",
+    "javascript-stringify": "^1.6.0",
+    "js-yaml": "^3.13.1",
+    "jscodeshift": "^0.6.4",
+    "lodash.clonedeep": "^4.5.0",
+    "minimist": "^1.2.0",
+    "recast": "^0.17.5",
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.7",
+    "resolve": "^1.8.1",
+    "semver": "^6.0.0",
+    "shortid": "^2.2.11",
+    "slash": "^2.0.0",
+    "validate-npm-package-name": "^3.0.0",
+    "vue-jscodeshift-adapter": "^2.0.2",
+    "yaml-front-matter": "^3.4.1"
+  },
+  "engines": {
+    "node": ">=8.9"
   }
 }
