@@ -1,85 +1,17 @@
 #! /usr/bin/env node
-const chalk = require("chalk")
 const program = require("commander")
-const figlet = require("figlet")
-const didYouMean = require('didyoumean')
-// didyoumean 用于用户输入与潜在列表进行匹配，拼写错误的命令行实用程序选项
-const requiredVersion = require('../package.json').engines.node
-
-// 匹配距离设置为长度的 60%
-didYouMean.threshold = 0.6
-
-// 定义 wjy-cli 的版本名称和使用方法的一些信息
-program
-    .name("wjy-cli")
-    .usage(`<command> [option]`)
-    .version(`wjy-cli ${require("../package.json").version}`);
 
 // 创建项目指令
-// todo: 弄成选一整个模板还是选单个插件加入
+
 program
     .command("create <project-name>") // 增加创建指令
     .description("create a new project powered by vue-cli-service") // 增加描述信息
-    .action((name, cmd) => {
+    .action((name) => {
         // 没有插件选项，直接进行create name
         require("../lib/create")(name);
     })
 
-// output help information on unknown commands
-program
-    .arguments('<command>')
-    .action((cmd) => {
-        program.outputHelp()
-        console.log(`  ` + chalk.red(`Unknown command ${chalk.yellow(cmd)}.`))
-        console.log()
-        suggestCommands(cmd)
-    })
-
-// add some useful info on help
-program.on('--help', () => {
-    console.log(
-        "\r\n" +
-        figlet.textSync("WJYGRIT", {
-            font: "3D-ASCII",
-            horizontalLayout: "default",
-            verticalLayout: "default",
-            width: 100,
-            whitespaceBreak: true,
-        })
-    );
-    console.log()
-    console.log()
-    console.log(`  Run ${chalk.cyan(`vue <command> --help`)} for detailed usage of given command.`)
-    console.log()
-})
-
-
-// 建议命令，当输入不知道的命令后，去判断可能是哪个
-function suggestCommands(cmd) {
-    const availableCommands = program.commands.map(cmd => {
-        return cmd._name
-    })
-
-    const suggestion = didYouMean(cmd, availableCommands)
-    if (suggestion) {
-        console.log(`  ` + chalk.red(`Did you mean ${chalk.yellow(suggestion)}?`))
-    }
-}
 
 program.parse(process.argv)
 
 
-function camelize(str) {
-    return str.replace(/-(\w)/g, (_, c) => c ? c.toUpperCase() : '')
-}
-
-function cleanArgs(cmd) {
-    const args = {}
-    cmd.options.forEach(o => {
-        const key = camelize(o.long.replace(/^--/, ''))
-        if (typeof cmd[key] !== 'function' && typeof cmd[key] !== 'undefined') {
-            args[key] = cmd[key]
-        }
-    })
-    return args
-}
