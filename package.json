@@ -1,6 +1,6 @@
 {
   "name": "wjy-cli",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "wjy cli， 一个简易版的前端vue插件",
   "main": "index.js",
   "homepage": "https://github.com/GRITWJY/wjy-cli#readme",
@@ -15,7 +15,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "wjy": "bin/wjy"
+    "wjy-test": "bin/wjy"
   },
   "files": [
     "bin",
