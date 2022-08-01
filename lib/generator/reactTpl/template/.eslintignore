@@ -1,0 +1,7 @@
+dist
+public
+node_modules
+
+babel.config.js
+config
+.eslintrc.js

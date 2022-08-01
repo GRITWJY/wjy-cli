@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3393912 */
+  /* Color fonts */
+  src:
+       url('../font/iconfont.woff2?t=1659078039961') format('woff2'),
+       url('../font/iconfont.woff?t=1659078039961') format('woff'),
+       url('../font/iconfont.ttf?t=1659078039961') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yanjing:before {
+  content: "\e661";
+}
+
+.icon-touxiang:before {
+  content: "\ebac";
+}
+
+.icon-riqi:before {
+  content: "\e663";
+}
+
+.icon-home:before {
+  content: "\e626";
+}
+
+.icon-tag:before {
+  content: "\e63e";
+}
+
+.icon-floder:before {
+  content: "\eac6";
+}
+
